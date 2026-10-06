@@ -26,6 +26,9 @@ python run_gpu_experiment.py
 - `confusion_matrix.png`：最佳方法的混淆矩阵
 - `experiment_summary.json`：实验配置和结果摘要
 - `gpu_metrics.json`：GPU/CPU EEGNet 训练结果和参数量
+- `gpu_accuracy_comparison.png`：GPU 版 EEGNet 结果图
+
+当前 RTX 5070 实测结果记录在 `gpu_results.md`。
 
 ## 研究解释
 

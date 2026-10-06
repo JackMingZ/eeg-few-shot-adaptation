@@ -4,3 +4,5 @@ results/*.png
 results/*.csv
 results/*.json
 .venv/
+
+*.whl
