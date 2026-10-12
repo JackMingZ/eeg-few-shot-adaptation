@@ -1,0 +1,14 @@
+{
+  "completed_runs": 1,
+  "checks_passed": [
+    "partition disjointness",
+    "nested class-balanced calibration",
+    "code snapshots",
+    "input cache hashes",
+    "shared source checkpoint hashes",
+    "prediction IDs and labels",
+    "recomputed metrics",
+    "confusion matrices"
+  ],
+  "diagnostic_warnings": []
+}

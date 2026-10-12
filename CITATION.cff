@@ -7,7 +7,7 @@ authors:
     affiliation: "Independent research project"
 version: 1.0.0
 date-released: 2026-10-12
-repository-code: "https://github.com/JackMingZ/special_project"
+repository-code: "https://github.com/JackMingZ/eeg-few-shot-adaptation"
 license: MIT
 keywords:
   - EEG
@@ -26,10 +26,16 @@ references:
         given-names: Adrian J.
       - family-names: Waytowich
         given-names: Nathaniel R.
+      - family-names: Gordon
+        given-names: Stephen M.
+      - family-names: Hung
+        given-names: Chou P.
+      - family-names: Lance
+        given-names: Brent J.
     title: "EEGNet: A Compact Convolutional Neural Network for EEG-based Brain–Computer Interfaces"
     journal: "Journal of Neural Engineering"
     year: 2018
     volume: 15
     issue: 5
-    article-number: 056013
+    article-number: "056013"
     doi: 10.1088/1741-2552/aace8c

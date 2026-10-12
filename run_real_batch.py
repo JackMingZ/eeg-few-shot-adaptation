@@ -29,6 +29,7 @@ def main():
     p.add_argument('--adapt-lr', type=float, default=0.001)
     p.add_argument('--budgets', type=int, nargs='+', default=[1,3,5,10])
     p.add_argument('--euclidean-alignment', action='store_true')
+    p.add_argument('--no-plots', action='store_true')
     a=p.parse_args()
     out=ROOT/a.output; out.mkdir(parents=True,exist_ok=True)
     plan=vars(a)|{'created_unix':time.time(),'note':'Exploratory defaults, not a confirmatory protocol.'}
@@ -65,7 +66,7 @@ def main():
             if result.returncode:
                 raise RuntimeError(f'Experiment failed: see {out}/{run.name}.log')
             print(f'COMPLETE {run.name}',flush=True)
-    subprocess.run([sys.executable,str(ROOT/'summarize_real_results.py'),'--root',str(out)],check=True,cwd=ROOT)
+    subprocess.run([sys.executable,str(ROOT/'summarize_real_results.py'),'--root',str(out), *(['--no-plots'] if a.no_plots else [])],check=True,cwd=ROOT)
     subprocess.run([sys.executable,str(ROOT/'audit_real_results.py'),'--root',str(out)],check=True,cwd=ROOT)
 
 

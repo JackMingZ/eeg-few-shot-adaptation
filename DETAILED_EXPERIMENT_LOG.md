@@ -158,7 +158,7 @@
 - `source_only_diagnostic` 和源训练规模补充实验改变了数据规模或输入设置，只用于诊断，不能替代主实验。
 - 主实验 `target_05_seed_7` 的源检查点只预测一个类别；审计保留此警告，说明该组合的迁移基线不可靠。
 - 已完成组合：27；审计通过：partition disjointness, nested class-balanced calibration, code snapshots, input cache hashes, shared source checkpoint hashes, prediction IDs and labels, recomputed metrics, confusion matrices, CSP checkpoint reload。
-- 审计警告：1 条；详见 [audit.json](audit.json)。
+- 审计警告：1 条；详见 audit.json（本地生成文件：`audit.json`）。
 - 五项协议单元测试、CUDA 运算、pip check 和 Python 编译检查已运行；测试输出应以本次终端记录为准。
 
 ## 13. 论文依据与实现边界
@@ -175,10 +175,10 @@
 
 ## 15. 文件索引
 
-- [REPORT.md](REPORT.md)：自动汇总报告。
-- [all_metrics.csv](all_metrics.csv)：逐目标、逐种子、逐方法指标。
-- [subject_means.csv](subject_means.csv)：逐被试均值。
-- [paired_gains.csv](paired_gains.csv)：相对同源模型的逐运行变化。
-- [cost_summary.csv](cost_summary.csv)：参数、时间和显存成本。
-- [audit.json](audit.json)：数据划分、哈希、预测和指标审计。
+- REPORT.md（本地生成文件：`REPORT.md`）：自动汇总报告。
+- all_metrics.csv（本地生成文件：`all_metrics.csv`）：逐目标、逐种子、逐方法指标。
+- subject_means.csv（本地生成文件：`subject_means.csv`）：逐被试均值。
+- paired_gains.csv（本地生成文件：`paired_gains.csv`）：相对同源模型的逐运行变化。
+- cost_summary.csv（本地生成文件：`cost_summary.csv`）：参数、时间和显存成本。
+- audit.json（本地生成文件：`audit.json`）：数据划分、哈希、预测和指标审计。
 - `target_XX_seed_YY/`：每轮配置、代码快照、划分、模型、预测、损失和日志。

@@ -1,28 +1,51 @@
-"""One-shot download -> preprocess -> experiments -> reports, all local."""
+"""Download, preprocess and evaluate one explicit experimental profile."""
 import argparse
 from pathlib import Path
 import subprocess
 import sys
+from src.experiment_profiles import PROFILES
 
-
-if __name__=='__main__':
-    p=argparse.ArgumentParser()
-    p.add_argument('--subjects',type=int,nargs='+',default=list(range(1,10)))
-    p.add_argument('--targets',type=int,nargs='+')
-    p.add_argument('--seeds',type=int,nargs='+',default=[7,17,27])
-    p.add_argument('--provider',choices=['upstream','nemar'],default='nemar')
-    p.add_argument('--epochs',type=int,default=100)
-    p.add_argument('--output',default='results/real/exploratory')
-    a=p.parse_args()
-    if len(set(a.subjects))<3 or not set(a.targets or a.subjects)<=set(a.subjects):
-        p.error('Need at least 3 subjects; targets must be among subjects')
-    root=Path(__file__).resolve().parent
-    commands=[
-        ['download_real_data.py','--subjects',*map(str,a.subjects),'--provider',a.provider,'--workers','4'],
-        ['prepare_real_data.py','--subjects',*map(str,a.subjects)],
-        ['run_real_batch.py','--subjects',*map(str,a.subjects),'--targets',*map(str,a.targets or a.subjects),
-         '--seeds',*map(str,a.seeds),'--epochs',str(a.epochs),'--output',a.output],
+def build_commands(args):
+    profile = PROFILES[args.profile]
+    preprocessing = ['--sampling-rate', str(profile.sampling_rate),
+                     '--epoch-start', str(profile.epoch_start), '--epoch-end', str(profile.epoch_end)]
+    return [
+        ['download_real_data.py', '--subjects', *map(str, args.subjects), '--provider', args.provider, '--workers', '4'],
+        ['prepare_real_data.py', '--subjects', *map(str, args.subjects),
+         '--output-dir', Path(profile.data_root).name, *preprocessing],
+        ['run_real_batch.py', '--subjects', *map(str, args.subjects),
+         '--targets', *map(str, args.targets or args.subjects), '--seeds', *map(str, args.seeds),
+         '--epochs', str(args.epochs), '--adapt-epochs', str(args.adapt_epochs),
+         '--budgets', *map(str, args.budgets), '--data-root', profile.data_root,
+         '--samples', str(profile.samples), *preprocessing,
+         '--temporal-kernel', str(profile.temporal_kernel), '--dropout', str(profile.dropout),
+         '--output', args.output or f'results/real/{args.profile}_rerun',
+         *(['--no-plots'] if args.no_plots else [])],
     ]
-    for command in commands:
-        print('STAGE '+command[0],flush=True)
-        subprocess.run([sys.executable,*command],cwd=root,check=True)
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--profile', choices=PROFILES, default='paper')
+    parser.add_argument('--subjects', type=int, nargs='+', default=list(range(1, 10)))
+    parser.add_argument('--targets', type=int, nargs='+')
+    parser.add_argument('--seeds', type=int, nargs='+', default=[7, 17, 27])
+    parser.add_argument('--provider', choices=['upstream', 'nemar'], default='nemar')
+    parser.add_argument('--epochs', type=int, default=100)
+    parser.add_argument('--adapt-epochs', type=int, default=50)
+    parser.add_argument('--budgets', type=int, nargs='+', default=[1, 3, 5, 10])
+    parser.add_argument('--output')
+    parser.add_argument('--no-plots', action='store_true')
+    parser.add_argument('--dry-run', action='store_true')
+    args = parser.parse_args()
+    if (len(set(args.subjects)) < 3 or len(set(args.subjects)) != len(args.subjects)
+            or not set(args.subjects) <= set(range(1, 10))
+            or not set(args.targets or args.subjects) <= set(args.subjects)
+            or min(args.epochs, args.adapt_epochs, *args.budgets) < 1):
+        parser.error('Use at least 3 distinct subjects in 1..9 and positive budgets/epochs')
+    for command in build_commands(args):
+        print(subprocess.list2cmdline([sys.executable, *command]), flush=True)
+        if not args.dry_run:
+            subprocess.run([sys.executable, *command], cwd=Path(__file__).resolve().parent, check=True)
+
+if __name__ == '__main__':
+    main()

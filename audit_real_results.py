@@ -13,10 +13,14 @@ ROOT=Path(__file__).resolve().parent
 
 
 def audit(root):
+    paths = sorted(Path(root).glob('target_*/metrics.json'))
+    if not paths:
+        raise ValueError('No completed runs: pass the parent of target_XX_seed_YY, not the run itself')
+    csp_checked = False
     findings=[]
     cache_hashes={}
     data_roots={}
-    for metrics_path in sorted(Path(root).glob('target_*/metrics.json')):
+    for metrics_path in paths:
         directory=metrics_path.parent
         cfg=json.loads((directory/'config.json').read_text())
         split=json.loads((directory/'splits.json').read_text())
@@ -71,12 +75,13 @@ def audit(root):
                 for key,value in actual.items(): assert abs(row[key]-value)<1e-12
                 assert np.array_equal(prediction['confusion_matrix'],confusion_matrix(truth,pred,labels=range(4)))
                 if row['method']=='csp_lda':
+                    csp_checked = True
                     reloaded=joblib.load(directory/'csp_lda.joblib')
                     assert np.array_equal(pred,reloaded.predict(test_x.astype(np.float64)))
                 if row['method']=='source' and len(set(pred))==1:
                     findings.append({'run':directory.name,'warning':'Source checkpoint predicts a single class; not a useful transfer baseline.'})
-    report={'completed_runs':len(list(Path(root).glob('target_*/metrics.json'))),
-            'checks_passed':['partition disjointness','nested class-balanced calibration','code snapshots','input cache hashes','shared source checkpoint hashes','prediction IDs and labels','recomputed metrics','confusion matrices','CSP checkpoint reload'],
+    report={'completed_runs':len(paths),
+            'checks_passed':['partition disjointness','nested class-balanced calibration','code snapshots','input cache hashes','shared source checkpoint hashes','prediction IDs and labels','recomputed metrics','confusion matrices'] + (['CSP checkpoint reload'] if csp_checked else []),
             'diagnostic_warnings':findings}
     (Path(root)/'audit.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
     print(json.dumps(report,indent=2))

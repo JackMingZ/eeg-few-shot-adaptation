@@ -1,0 +1,50 @@
+{
+  "subjects": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "targets": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "seeds": [
+    7,
+    17,
+    27
+  ],
+  "epochs": 100,
+  "input_scale": 1.0,
+  "output": "results/real/paper_reproduction",
+  "data_root": "data/processed_paper",
+  "samples": 256,
+  "sampling_rate": 128.0,
+  "epoch_start": 2.5,
+  "epoch_end": 4.5,
+  "temporal_kernel": 32,
+  "dropout": 0.25,
+  "patience": 20,
+  "adapt_epochs": 50,
+  "adapt_lr": 0.001,
+  "budgets": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "created_unix": 1791608384.6592548,
+  "note": "Exploratory defaults, not a confirmatory protocol."
+}

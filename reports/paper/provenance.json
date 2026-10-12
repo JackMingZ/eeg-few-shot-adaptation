@@ -1,0 +1,1622 @@
+[
+  {
+    "run": "target_01_seed_17",
+    "metrics_sha256": "e035888ddebd43fd3e156ff0810951e98ab9e8ccf21e50e13d25c5429349a84d",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 1,
+      "seed": 17,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 2,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 20
+    }
+  },
+  {
+    "run": "target_01_seed_27",
+    "metrics_sha256": "b2f7e03c9ebb8039ef64d504084d0e7e5739eb3bc5d7d255ec25afb3ad64fa20",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 1,
+      "seed": 27,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 2,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 15
+    }
+  },
+  {
+    "run": "target_01_seed_7",
+    "metrics_sha256": "061b35a0d847426c2e688ad94cf77341a08177d7de8fde0b3059b1108756686b",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 1,
+      "seed": 7,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 2,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 10
+    }
+  },
+  {
+    "run": "target_02_seed_17",
+    "metrics_sha256": "7a0be975a69af121a8881584f98636179fb510e4e60232da5efd370bf54cb8e5",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 2,
+      "seed": 17,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 3,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 43
+    }
+  },
+  {
+    "run": "target_02_seed_27",
+    "metrics_sha256": "6e3dce9a103941d34c76144dd081dea37d5e837f13b992cc2bb346ac738466a7",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 2,
+      "seed": 27,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 3,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 79
+    }
+  },
+  {
+    "run": "target_02_seed_7",
+    "metrics_sha256": "b1c3e80c08cb8e1e9c928553b5da9763e3e8a03e137069497e5c8deb073e8f20",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 2,
+      "seed": 7,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 3,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 95
+    }
+  },
+  {
+    "run": "target_03_seed_17",
+    "metrics_sha256": "daf36bb2046ed72bb65f0b801b8b38e4700d909e97a7d0e74a532ac3b06c1610",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 3,
+      "seed": 17,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 4,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 13
+    }
+  },
+  {
+    "run": "target_03_seed_27",
+    "metrics_sha256": "53a07abacf2bbfa23e24513e05c33c5f0d0b5d0edfa3f16bbf1c36490bf517d2",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 3,
+      "seed": 27,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 4,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 16
+    }
+  },
+  {
+    "run": "target_03_seed_7",
+    "metrics_sha256": "2201a21f7281e4eb7c4e7736427b8ff994da2903599a50fe17d62d7191e6c4f7",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 3,
+      "seed": 7,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 4,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 16
+    }
+  },
+  {
+    "run": "target_04_seed_17",
+    "metrics_sha256": "989481f0e9b4ba70a7c5213288741626ceada5921ce9530cfdd6f299d44c9ffd",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 4,
+      "seed": 17,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 5,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 1
+    }
+  },
+  {
+    "run": "target_04_seed_27",
+    "metrics_sha256": "9782bae3b212975800dc27a147be2a7357df50acd9c503cfcc89fdf6cd5d143e",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 4,
+      "seed": 27,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 5,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 1
+    }
+  },
+  {
+    "run": "target_04_seed_7",
+    "metrics_sha256": "432b6c5e5c4fba8bfe569aae51aca56a484e3dcf8b90b1519b425e84ac0053d5",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 4,
+      "seed": 7,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 5,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 1
+    }
+  },
+  {
+    "run": "target_05_seed_17",
+    "metrics_sha256": "cdaeeee939010dd49fdf9676ae245f36c59f5e4840ea1561cc85b522bfae0942",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 5,
+      "seed": 17,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 6,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 4
+    }
+  },
+  {
+    "run": "target_05_seed_27",
+    "metrics_sha256": "3f6998cf0f93d4acd895f191a4daab8eb1d8cea89cddb77afa81360dba0313d3",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 5,
+      "seed": 27,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 6,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 6
+    }
+  },
+  {
+    "run": "target_05_seed_7",
+    "metrics_sha256": "aacf1045b1ba16a1c388da5de1b3a7d96e275fc63cce21e3ca50defd4db4e4e7",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 5,
+      "seed": 7,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 6,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 6
+    }
+  },
+  {
+    "run": "target_06_seed_17",
+    "metrics_sha256": "0d9f4852e66eba54f1fc32a78e111479a7828297d46ad9f2da79ae5f6230b54a",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 6,
+      "seed": 17,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 7,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 96
+    }
+  },
+  {
+    "run": "target_06_seed_27",
+    "metrics_sha256": "56d3968e1b87977a15e97140bcf293b8e6e2fba5ebe105120e0571fa7ecbb693",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 6,
+      "seed": 27,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 7,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 79
+    }
+  },
+  {
+    "run": "target_06_seed_7",
+    "metrics_sha256": "f78b3ab64f9d2fde10b0f97344f6c32a444808997d575eb65d7e8464cf64460e",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 6,
+      "seed": 7,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 7,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 17
+    }
+  },
+  {
+    "run": "target_07_seed_17",
+    "metrics_sha256": "1c84332dd2c2251db2de071b41ca58b4477a751a5fcb0f3c70185a513c9353b5",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 7,
+      "seed": 17,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 8,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 86
+    }
+  },
+  {
+    "run": "target_07_seed_27",
+    "metrics_sha256": "4d81ade2977069a3afd14038a2de9e0f61ec46ec9d750161f0509e702e282401",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 7,
+      "seed": 27,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 8,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 58
+    }
+  },
+  {
+    "run": "target_07_seed_7",
+    "metrics_sha256": "7450b9bfc051a83de1c758b793d03c430881d14249ff0371c2ed301c978ed62e",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 7,
+      "seed": 7,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 8,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 83
+    }
+  },
+  {
+    "run": "target_08_seed_17",
+    "metrics_sha256": "dc1d07fa4dc2c8f04e7870fe6a7c6bd5e2bbc63d5c27c1d9011eea45e2592037",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 8,
+      "seed": 17,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 9,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 10
+    }
+  },
+  {
+    "run": "target_08_seed_27",
+    "metrics_sha256": "31358ec1e5fe1f11441d101310b2f7ae930993a7a1040e41872ad3d724ff431c",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 8,
+      "seed": 27,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 9,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 8
+    }
+  },
+  {
+    "run": "target_08_seed_7",
+    "metrics_sha256": "a27c21889f8006e14f876fc934115abb74b8f192b88b4ce888ef5e2733c4a400",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 8,
+      "seed": 7,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 9,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 7
+    }
+  },
+  {
+    "run": "target_09_seed_17",
+    "metrics_sha256": "31cf06a155ae9daf1d9f4fcf98881de482c507f4ad92f4ecc47d807ef1ca02b2",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 9,
+      "seed": 17,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 1,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 39
+    }
+  },
+  {
+    "run": "target_09_seed_27",
+    "metrics_sha256": "a0565ed00e943a7639a4f779cab9e14e016820b7524db0578bf4218ce1d4ffb4",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 9,
+      "seed": 27,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 1,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 53
+    }
+  },
+  {
+    "run": "target_09_seed_7",
+    "metrics_sha256": "95cef986f21fd822b62600a7adb0d65cf45e599200fff45a96412f2bbf757a11",
+    "configuration": {
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "samples": 256,
+      "temporal_kernel": 32,
+      "dropout": 0.25,
+      "sampling_rate": 128.0,
+      "epoch_start": 2.5,
+      "epoch_end": 4.5,
+      "target": 9,
+      "seed": 7,
+      "epochs": 100,
+      "patience": 20,
+      "adapt_epochs": 50,
+      "adapt_lr": 0.001,
+      "input_scale": 1.0,
+      "budgets": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "skip_csp": false,
+      "device": "cuda",
+      "torch": "2.11.0+cu128",
+      "cache_sha256": {
+        "1": "b00aaae82f582f8e234374306faff0410ce3eb981dca31ac68f93b410b26125f",
+        "2": "3d29096d5fde5dd93e4fb10fd765c8d363832c5369b2954db24ebfc5ef55a6f2",
+        "3": "e54ebcc90eec872bcece79995cf846e0a489223e2c4af41ae83ae94a82f76e24",
+        "4": "9076aa6dc4a39ee6fa6335da678fad92c02d0b80685737c92f18b6cc7fddf316",
+        "5": "f2f25f14eb5b79f0f9c2c9bcd2aa2b71a42f76dbfd90cef10b57f3bff6250bb1",
+        "6": "a8954e98905dd1127b8d4bedc881ce51444390116236dcc78902620ac12a7553",
+        "7": "ab80775182c8307268e4e9a58a69258526a219265b1e02c2d4fe30d2ad2ac3ec",
+        "8": "5554a6256007a2f975be49115b0c69990bc7dab542c2978398e08fc330cede36",
+        "9": "87b5c77aa8303bbc84f6cac515b843884ec796e2f00d0d97408fc0334d48b41d"
+      },
+      "validation_subject": 1,
+      "input_scale_microvolt": 1.0,
+      "adaptation_batchnorm": "frozen source statistics for all methods",
+      "status": "complete",
+      "code_sha256": {
+        "src/real_eeg.py": "322755d2147179e9edc60a5dce429f1c279ab9eb4b2bcb9c124c024d6bee70bc",
+        "run_real_experiment.py": "e83cf78bcf44740264852708af959aeef0cc0e239b8659455f635a4bd929b84b",
+        "prepare_real_data.py": "2adc728f8d366057eb22cfb8399b437f9acb15222230bc8c9052a5b8806998a3"
+      },
+      "best_epoch": 39
+    }
+  }
+]

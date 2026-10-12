@@ -1,67 +1,64 @@
-# 跨被试 EEG 少样本适配
+# Cross-subject EEG few-shot adaptation
 
-这是一个面向脑机接口研究申请的可复现实验工程：在真实运动想象 EEG 上研究新被试的少样本适配，并同时考察准确率、参数量、适配时间和负迁移。若想先了解项目动机、本人完成的工作和下一步计划，参见 [申请项目说明](APPLICATION_PROJECT.md)。独立环境验证记录见 [REPRODUCIBILITY_SMOKE_TEST.md](REPRODUCIBILITY_SMOKE_TEST.md)，配图设计稿见 [FIGURE_SPEC.md](FIGURE_SPEC.md)。
+新用户通常需要提供标注脑电才能校准运动想象分类器。本项目研究：每类只有 1、3、5 或 10 条标注试次时，微调 EEGNet 分类头能带来多少改善，是否值得更新整个网络？
 
-## English overview
+Experiments on nine BNCI2014-001 participants compare head-only fine-tuning, full-model fine-tuning and channel-wise adaptation. Head adaptation improves mean accuracy with ten labeled trials per class, but hurts it with only one. These are exploratory results, not a new architecture or a strict reproduction of EEGNet.
 
-This repository studies few-shot cross-subject adaptation for motor-imagery EEG using an EEGNet-inspired compact neural network. It compares head-only fine-tuning, full-model fine-tuning, channel-wise adaptation, and CSP+LDA while tracking accuracy, negative transfer, trainable parameters, and adaptation cost. The project is an exploratory, reproducible research engineering study rather than a claim of a new EEGNet architecture.
+## 结果
 
-以 EEGNet 时空特征提取结构为基线，比较真实运动想象 EEG 上的分类头微调、全模型微调、通道缩放/偏移加分类头适配，并分析参数与时间成本。当前真实模型的参数统计见 [模型概况](MODEL_PROFILE.md)。
+| 方法 | 每类校准数 | Accuracy | 被试间 SD | 适配参数 | 适配时间（秒） |
+|---|---:|---:|---:|---:|---:|
+| EEGNet，无适配 | 0 | 41.74% | 16.94% | 0 | — |
+| 分类头微调 | 10 | 47.69% | 15.62% | 516 | 0.071 |
+| 全模型微调 | 10 | 47.44% | 16.23% | 1,716 | 0.121 |
+| 通道缩放 + 分类头 | 10 | 48.50% | 15.74% | 538 | 0.124 |
+| 通道缩放/偏移 + 分类头 | 10 | 48.80% | 15.85% | 560 | 0.125 |
 
-**2026-10-08：九被试×三种子的真实数据探索实验已完成，共486行指标。** [中文研究报告](RESEARCH_REPORT.md) · [结果索引](RESULTS_INDEX.md) · [研究记录](STUDY_LOG.md)。每类10条时 head 48.44%、full 47.06%、affine_head 48.56%；尚无明确证据支持通道仿射优于简单分类头。不能将探索结果解释为严格复现或确证性结论。
+主配置为 128 Hz、22 × 256 点、时间核 32、Dropout 0.25，总参数 1,760。每名被试先平均三个种子，再统计九名被试的均值与标准差。时间来自原 RTX 5070 实验，仅反映本机测量。
 
-当前已有真实数据下载、预处理、GPU 训练、适配、评估、批量实验、报告和离线预测入口。实际完成的实验只认 `results/real/` 下的 `metrics.json`；尚未产生的结果不能视为已完成。原来的合成演示保留，两个流程互相独立。
+分类头在 8/9 名被试上改善，平均提高 5.94 个百分点；每类只有 1 条时反而平均下降 2.01 个百分点。仿射方案平均分略高，但方法间比较经 Holm 校正后不足以支持稳定优势。分类头是本次 k=10 实测较快的适配方案，不能由参数量直接推断速度。
 
-## 真实数据运行
+[公开结果与重算说明](reports/paper/README.md)包含逐运行指标、逐被试结果、成本、配置和统计表。不提供原始 EEG 或权重；公开表可复算汇总，逐试次审计仍需要本地数据与训练产物。
 
-在项目目录使用已配置的虚拟环境：
+## 实验划分
+
+每轮一名目标被试，其 T 会话提供校准样本，E 会话固定用于测试。另一名被试提供源域验证，其余七名用于训练；源被试使用两个会话。各适配方法共享源模型和校准样本，预算采用嵌套抽样。适配时冻结 BatchNorm 运行统计并关闭 Dropout；full 更新原网络权重。
+
+这是离线四分类实验，使用 4–38 Hz 滤波、提示后 0.5–2.5 秒窗口，保留伪迹试次。已查看过目标测试结果并作过探索性选择，因此不称为预注册或独立确认实验。
+
+## 快速开始
+
+在仓库根目录运行，以下为 Windows PowerShell 命令。已验证的本地 Python 版本为 3.14；其他系统尚未独立验证。GPU 安装见运行指南。
 
 ```powershell
-.\.venv\Scripts\python.exe verify_environment.py
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
-# 完整流程：下载、预处理、9 被试 × 3 种子探索实验及报告
-.\.venv\Scripts\python.exe run_real_pipeline.py
+# 三被试、一个种子的流程检查，不用于估计模型效果；不生成图片
+.\.venv\Scripts\python.exe run_real_pipeline.py --profile paper --subjects 1 2 3 --targets 1 --seeds 7 --epochs 5 --adapt-epochs 5 --budgets 1 3 --output results/real/paper_smoke --no-plots
 ```
 
-下载可续传，已完成的批量实验会跳过。全部数据约 780 MB，网络速度可能成为主要耗时；训练成本以本机实测为准。
-
-命令、划分、方法与预测输入约定详见 [真实数据运行说明](REAL_DATA_GUIDE.md)。当前环境见 [版本核对](config_inventory.md) 和 `environment_verified.json`；`requirements-environment.txt` 是原始版本快照，`requirements-repro.txt` 是移除本机 wheel 路径后的重建清单。独立 CPU 环境已经完成依赖安装、`pip check`、6 项协议测试和小规模真实 EEG smoke test；详细记录见 [独立环境复现记录](REPRODUCIBILITY_SMOKE_TEST.md)。
-
-## 实验约束
-
-- 每轮一个目标被试：T 会话为校准池，E 会话固定最终测试。
-- 另一个源被试提供验证集，其余源被试训练；目标测试集不用于选参。
-- 所有适配复制同一源模型，使用同一批嵌套校准样本；冻结主干时也冻结 BN 运行统计。
-- 保存原始试次 ID、配置、数据摘要、逐试次预测、权重和成本，自动检查模型重载预测一致。
-- 当前参数为探索性预设；正式选参、全部数据评估和研究结论需分别验收。
-
-## 论文来源
-
-Lawhern et al. (2018), EEGNet，DOI [10.1088/1741-2552/aace8c](https://doi.org/10.1088/1741-2552/aace8c)。借鉴时间卷积、空间深度卷积、可分离卷积及紧凑设计。原论文已有跨被试实验；本项目继续研究少样本个体适配与成本。
-
-当前真实数据模型对照作者结构实现，但采样率、时间窗、训练划分和部分超参数不同，不是原论文结果严格复现。通道仿射调制也不是可直接声称的新发明。详细对照与相关工作见 [文献记录](references/LITERATURE_NOTES.md)。
-
-## 历史合成演示
+入口会下载对应被试的数据并预处理。完整矩阵最多下载约 780 MB，需要网络；CPU 可运行但完整实验可能较慢。
 
 ```powershell
-.\.venv\Scripts\python.exe run_experiment.py
-.\.venv\Scripts\python.exe run_gpu_experiment.py
+# 完整九被试、三个种子；输出到新目录，不覆盖历史结果
+.\.venv\Scripts\python.exe run_real_pipeline.py --profile paper --output results/real/paper_rerun --no-plots
 ```
 
-这些旧入口只产生合成数据结果，输出到 `results/` 顶层。旧网络为 1,020 参数的简化模型；旧“校准”是混合源样本与两个目标被试校准样本后从头训练。旧 `subject_normalized` 实际为逐试次逐通道时间标准化。原来 97.58%/100% 等数字不是实际运动想象性能。
+默认入口使用 `paper` 配置。`--profile legacy` 保留 125 Hz、500 点的早期实验；底层单次脚本的历史默认值没有更改，不应直接用于重算上表。使用 `--dry-run` 可查看实际命令。
 
-最初的目标与任务列表保留在 [历史交接](PROJECT_HANDOFF.md) 和 [实施计划](IMPLEMENTATION_PLAN.md)，其“本轮”描述对应建档时点，最新进度以后续实验文件和进度记录为准。
+## 限制
 
-最新九被试真实 EEG 探索实验的完整、可追溯记录见 [详细实验记录](DETAILED_EXPERIMENT_LOG.md)。
+- 只有一个九被试数据集，结果不能代表实际在线部署表现。
+- 两个源检查点出现单类别预测，已保留，尚需诊断训练稳定性。
+- 划分、训练轮数和伪迹政策与原论文不同，不是论文数值的严格复现；小样本统计仅供探索。
 
-项目重整与论文对照方案见 [PROJECT_REDESIGN.md](PROJECT_REDESIGN.md)。当前主线已收敛为论文基线复现 + 预注册少样本适配比较；通道仿射只保留为消融。
+## 文档与来源
 
-已开始论文配置基线分支，见 [PAPER_REPRODUCTION_LOG.md](PAPER_REPRODUCTION_LOG.md)。已完成九被试论文配置矩阵；结果属于探索性分析，不是论文数值的严格复现。
+- [运行指南](REAL_DATA_GUIDE.md)
+- [实验报告与公开证据](reports/paper/README.md)
+- [研究记录](STUDY_LOG.md)
 
-当前论文式基线矩阵及被试级统计见 [PAPER_REPRODUCTION_LOG.md](PAPER_REPRODUCTION_LOG.md) 和 `results/real/paper_reproduction/`。
+参考 Lawhern et al. (2018), [EEGNet](https://doi.org/10.1088/1741-2552/aace8c)。数据为 BNCI2014-001 / BCI Competition IV 2a。论文、数据和第三方代码按各自许可使用，项目 MIT 许可不覆盖第三方材料。
 
-Euclidean Alignment 的隔离试验记录见 [EUCLIDEAN_ALIGNMENT_LOG.md](EUCLIDEAN_ALIGNMENT_LOG.md)；由于首个试验显著退化，暂不纳入完整主矩阵。
-
-当前主线已经锁定为分类头少样本适配，决策与开发/留出检查见 [HEAD_ADAPTATION_DECISION.md](HEAD_ADAPTATION_DECISION.md)。
-
-GitHub 上传前的文件范围、忽略项和新环境检查见 [GITHUB_RELEASE_CHECKLIST.md](GITHUB_RELEASE_CHECKLIST.md)。真实数据、模型和结果矩阵默认不进入仓库。
+项目开发使用了 AI 辅助代码修改、文档整理和检查命令编写。

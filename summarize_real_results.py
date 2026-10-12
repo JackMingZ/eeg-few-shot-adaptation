@@ -9,7 +9,7 @@ import pandas as pd
 import numpy as np
 
 
-def summarize(root):
+def summarize(root, plots=True):
     root=Path(root)
     records=[]
     signatures=set()
@@ -38,31 +38,32 @@ def summarize(root):
     cost_columns=['parameters','trainable_parameters','adaptation_seconds','source_training_seconds','inference_seconds','peak_cuda_bytes']
     costs=frame.groupby(['method','budget_per_class'])[cost_columns].mean()
     costs.to_csv(root/'cost_summary.csv')
-    fig,ax=plt.subplots(figsize=(8,5))
-    for method in ['head','full','affine_head','scale_head']:
-        part=per_subject[per_subject.method==method].groupby('budget_per_class').accuracy.agg(['mean','std'])
-        if len(part): ax.errorbar(part.index,part['mean'],yerr=part['std'].fillna(0),marker='o',capsize=3,label=method)
-    for method,color in [('source','black'),('csp_lda','gray')]:
-        part=per_subject[per_subject.method==method]
-        if len(part): ax.axhline(part.accuracy.mean(),linestyle='--',color=color,label=method)
-    ax.set_xticks(sorted(set(frame.loc[frame.budget_per_class>0,'budget_per_class'])))
-    ax.set(xlabel='Labeled trials per class',ylabel='Accuracy',ylim=(0,1),title='Real EEG exploratory results (subject means; SD across subjects)')
-    ax.legend(); fig.tight_layout(); fig.savefig(root/'budget_accuracy.png',dpi=160); plt.close(fig)
-    for directory in sorted(root.glob('target_*')):
-        history=directory/'training_history.json'
-        if history.exists():
-            h=pd.DataFrame(json.loads(history.read_text(encoding='utf-8')))
-            fig,ax=plt.subplots(figsize=(6,4))
-            ax.plot(h.epoch,h.train_loss,label='train'); ax.plot(h.epoch,h.validation_loss,label='validation')
-            ax.set(xlabel='Epoch',ylabel='Cross-entropy'); ax.legend(); fig.tight_layout()
-            fig.savefig(directory/'training_curve.png',dpi=120); plt.close(fig)
-        for prediction in directory.glob('*_predictions.npz'):
-            with np.load(prediction,allow_pickle=False) as d:
-                cm=d['confusion_matrix']
-            fig,ax=plt.subplots(figsize=(4,4)); ax.imshow(cm,cmap='Blues')
-            for (i,j),value in np.ndenumerate(cm): ax.text(j,i,str(value),ha='center',va='center')
-            ax.set(xlabel='Predicted',ylabel='True',xticks=range(4),yticks=range(4),title=prediction.stem.replace('_predictions',''))
-            fig.tight_layout(); fig.savefig(prediction.with_suffix('.png'),dpi=100); plt.close(fig)
+    if plots:
+        fig,ax=plt.subplots(figsize=(8,5))
+        for method in ['head','full','affine_head','scale_head']:
+            part=per_subject[per_subject.method==method].groupby('budget_per_class').accuracy.agg(['mean','std'])
+            if len(part): ax.errorbar(part.index,part['mean'],yerr=part['std'].fillna(0),marker='o',capsize=3,label=method)
+        for method,color in [('source','black'),('csp_lda','gray')]:
+            part=per_subject[per_subject.method==method]
+            if len(part): ax.axhline(part.accuracy.mean(),linestyle='--',color=color,label=method)
+        ax.set_xticks(sorted(set(frame.loc[frame.budget_per_class>0,'budget_per_class'])))
+        ax.set(xlabel='Labeled trials per class',ylabel='Accuracy',ylim=(0,1),title='Real EEG exploratory results (subject means; SD across subjects)')
+        ax.legend(); fig.tight_layout(); fig.savefig(root/'budget_accuracy.png',dpi=160); plt.close(fig)
+        for directory in sorted(root.glob('target_*')):
+            history=directory/'training_history.json'
+            if history.exists():
+                h=pd.DataFrame(json.loads(history.read_text(encoding='utf-8')))
+                fig,ax=plt.subplots(figsize=(6,4))
+                ax.plot(h.epoch,h.train_loss,label='train'); ax.plot(h.epoch,h.validation_loss,label='validation')
+                ax.set(xlabel='Epoch',ylabel='Cross-entropy'); ax.legend(); fig.tight_layout()
+                fig.savefig(directory/'training_curve.png',dpi=120); plt.close(fig)
+            for prediction in directory.glob('*_predictions.npz'):
+                with np.load(prediction,allow_pickle=False) as d:
+                    cm=d['confusion_matrix']
+                fig,ax=plt.subplots(figsize=(4,4)); ax.imshow(cm,cmap='Blues')
+                for (i,j),value in np.ndenumerate(cm): ax.text(j,i,str(value),ha='center',va='center')
+                ax.set(xlabel='Predicted',ylabel='True',xticks=range(4),yticks=range(4),title=prediction.stem.replace('_predictions',''))
+                fig.tight_layout(); fig.savefig(prediction.with_suffix('.png'),dpi=100); plt.close(fig)
     lines=['# 真实 EEG 探索性实验报告','',
            f'已完成 {frame[["target","seed"]].drop_duplicates().shape[0]} 个被试/种子组合，{frame.target.nunique()} 个目标被试。',
            '本报告由原始 metrics.json 自动生成；未完成的组合不计入。当前结果是预设设置下的探索性实验，不是论文复现结果或确证性统计结论。','',
@@ -87,16 +88,18 @@ def summarize(root):
         full=summary.loc[('full',10),('accuracy','mean')]
         lines += ['', '## 预设每类 10 条条件的直接比较', '',
                   f'全模型 {full:.2%}，仅分类头 {head:.2%}，通道仿射加分类头 {affine:.2%}；仿射方法相对分类头的平均差为 {(affine-head)*100:+.2f} 个百分点。此为描述性比较，未据此做显著性或普适性声明。',
-                  '通道仿射参数仅有 44 个，但还需更新 964 个分类头参数；且梯度必须穿过主干传播到输入。因此更新参数量减少不必然带来时间或显存节省，成本应以本次实测为准。']
+                  '通道仿射新增 44 个参数；分类头参数量取决于输入配置，见成本表。输入梯度仍需穿过主干，更新参数少不必然更快。']
     lines += ['', '## 解释与局限','',
               '先对同一被试的种子取平均，再汇总被试均值与标准差；未将种子当作独立被试。校准收益和下降见 paired_gains.csv。完整配置、试次划分、源权重摘要、训练曲线及预测保存在各 target 目录。',
            '适配轮数和学习率为预设探索设置，尚未做源域模拟适配验证选参。当前全模型微调固定 BatchNorm 统计并关闭 Dropout，需与其他微调策略区分。尚无独立数据集验证，不能声称通道适配新颖或普遍优于全模型。',
               '时间为本机测量；推理时间包含数据传输和批处理开销。显存为进程内 CUDA 最大已分配内存，包含常驻模型，不能解释为方法独占的增量显存。',
-              '', '![预算曲线](budget_accuracy.png)']
+              '', ('![预算曲线](budget_accuracy.png)' if plots else '本次未生成图片。')]
     (root/'REPORT.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     print(f'Summarized {len(frame)} rows into {root}')
 
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(); p.add_argument('--root',default='results/real/pilot')
-    summarize(p.parse_args().root)
+    p.add_argument('--no-plots', action='store_true')
+    args = p.parse_args()
+    summarize(args.root, plots=not args.no_plots)

@@ -1,3 +1,5 @@
+> 当前主配置公开表见 [reports/paper](reports/paper/README.md)。下列 results 路径只存在于本地，不是公开下载链接。
+
 # 结果目录索引
 
 所有目录均位于本地 `<project-root>`。数据和训练产物体积较大，已从 Git 默认跟踪排除，但保留在本机。

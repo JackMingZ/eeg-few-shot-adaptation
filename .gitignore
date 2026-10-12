@@ -12,3 +12,6 @@ environment_verified.json
 
 *.whl
 *.pt
+
+# Local editing scratch files
+work/
