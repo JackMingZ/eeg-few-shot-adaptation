@@ -2,6 +2,10 @@
 
 这是一个面向脑机接口研究申请的可复现实验工程：在真实运动想象 EEG 上研究新被试的少样本适配，并同时考察准确率、参数量、适配时间和负迁移。若想先了解项目动机、本人完成的工作和下一步计划，参见 [申请项目说明](APPLICATION_PROJECT.md)。独立环境验证记录见 [REPRODUCIBILITY_SMOKE_TEST.md](REPRODUCIBILITY_SMOKE_TEST.md)，配图设计稿见 [FIGURE_SPEC.md](FIGURE_SPEC.md)。
 
+## English overview
+
+This repository studies few-shot cross-subject adaptation for motor-imagery EEG using an EEGNet-inspired compact neural network. It compares head-only fine-tuning, full-model fine-tuning, channel-wise adaptation, and CSP+LDA while tracking accuracy, negative transfer, trainable parameters, and adaptation cost. The project is an exploratory, reproducible research engineering study rather than a claim of a new EEGNet architecture.
+
 以 EEGNet 时空特征提取结构为基线，比较真实运动想象 EEG 上的分类头微调、全模型微调、通道缩放/偏移加分类头适配，并分析参数与时间成本。当前真实模型的参数统计见 [模型概况](MODEL_PROFILE.md)。
 
 **2026-10-08：九被试×三种子的真实数据探索实验已完成，共486行指标。** [中文研究报告](RESEARCH_REPORT.md) · [结果索引](RESULTS_INDEX.md) · [研究记录](STUDY_LOG.md)。每类10条时 head 48.44%、full 47.06%、affine_head 48.56%；尚无明确证据支持通道仿射优于简单分类头。不能将探索结果解释为严格复现或确证性结论。
@@ -21,7 +25,7 @@
 
 下载可续传，已完成的批量实验会跳过。全部数据约 780 MB，网络速度可能成为主要耗时；训练成本以本机实测为准。
 
-命令、划分、方法与预测输入约定详见 [真实数据运行说明](REAL_DATA_GUIDE.md)。当前环境见 [版本核对](config_inventory.md) 和 `environment_verified.json`；`requirements-environment.txt` 是原始版本快照，`requirements-repro.txt` 是移除本机 wheel 路径后的重建清单；当前 pip check 已通过，独立干净环境重建尚未验证。
+命令、划分、方法与预测输入约定详见 [真实数据运行说明](REAL_DATA_GUIDE.md)。当前环境见 [版本核对](config_inventory.md) 和 `environment_verified.json`；`requirements-environment.txt` 是原始版本快照，`requirements-repro.txt` 是移除本机 wheel 路径后的重建清单。独立 CPU 环境已经完成依赖安装、`pip check`、6 项协议测试和小规模真实 EEG smoke test；详细记录见 [独立环境复现记录](REPRODUCIBILITY_SMOKE_TEST.md)。
 
 ## 实验约束
 

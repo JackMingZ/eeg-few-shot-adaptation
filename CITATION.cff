@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+title: "EEGNet-based Few-shot Cross-subject Adaptation"
+message: "If this repository supports your work, please cite the repository and the EEGNet paper."
+type: software
+authors:
+  - name: "JackMingZ"
+    affiliation: "Independent research project"
+version: 1.0.0
+date-released: 2026-10-12
+repository-code: "https://github.com/JackMingZ/special_project"
+license: MIT
+keywords:
+  - EEG
+  - brain-computer interface
+  - EEGNet
+  - motor imagery
+  - few-shot learning
+  - domain adaptation
+  - PyTorch
+references:
+  - type: article
+    authors:
+      - family-names: Lawhern
+        given-names: Vance J.
+      - family-names: Solon
+        given-names: Adrian J.
+      - family-names: Waytowich
+        given-names: Nathaniel R.
+    title: "EEGNet: A Compact Convolutional Neural Network for EEG-based Brain–Computer Interfaces"
+    journal: "Journal of Neural Engineering"
+    year: 2018
+    volume: 15
+    issue: 5
+    article-number: 056013
+    doi: 10.1088/1741-2552/aace8c
