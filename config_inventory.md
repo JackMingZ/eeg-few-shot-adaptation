@@ -1,48 +1,23 @@
-# special_project 配置清单
+# 当前环境核对
 
-生成时间：2026-10-06
+核对日期：2026-10-08。使用项目 `.venv/Scripts/python.exe` 实测。
 
-## 工作目录
+| 项目 | 当前值 |
+|---|---|
+| 系统 | Windows |
+| Python | 3.14.4 |
+| NumPy | 2.5.3 |
+| SciPy | 1.18.1 |
+| scikit-learn | 1.9.1 |
+| pandas | 3.0.6 |
+| matplotlib | 3.11.2 |
+| PyTorch | 2.11.0+cu128 |
+| CUDA runtime | 12.8 |
+| CUDA 可用 | 是 |
+| GPU | NVIDIA GeForce RTX 5070 |
+| MNE | 1.13.2 |
+| MOABB | 1.7.2 |
 
-- 路径：`D:\special_project`
-- 初始状态：空目录
-- 当前用途：脑机接口小型研究项目
-- 文件系统权限：当前用户可读写；目录所有者为 `DESKTOP-U7D2AM1\Jack_Ming`
+2026-10-08 已用 verify_environment.py 重新核查：驱动 595.97、显存 12227 MiB，CUDA 矩阵乘法通过。机器可读记录见 environment_verified.json。requirements-environment.txt 保存全部已安装包版本，原 requirements 文件仍是最低版本约束；干净环境重建验证尚未完成。
 
-## 主机与开发工具
-
-- 操作系统：Windows
-- Python：3.14.4
-- Python 可执行文件：`C:\Program Files\Python314\python.exe`
-- pip：`C:\Program Files\Python314\Scripts\pip.exe`
-- Git：`D:\杂七杂八的项目\Git\cmd\git.exe`
-- GPU：本项目不依赖 GPU
-
-## 已安装科学计算依赖
-
-- numpy 2.5.3
-- scipy 1.18.1
-- scikit-learn 1.9.1
-- pandas 3.0.6
-- matplotlib 3.11.2
-
-## GPU 检测
-
-- GPU：NVIDIA GeForce RTX 5070
-- 驱动：595.97
-- 显存：12227 MiB
-- CUDA 训练：已提供 PyTorch EEGNet 路径；运行时自动检测 `cuda`
-
-## 未预装依赖
-
-- PyTorch
-- MNE-Python
-- MOABB
-- Jupyter
-
-## 研究约束与决策
-
-1. 当前没有实验采集设备，因此使用可复现的公开数据接口和 EEG 生成器。
-2. 当前环境没有深度学习框架，因此第一版使用 EEGNet 论文中的“频域特征 + 分类评估”思想，构建可运行的轻量基线。
-3. 研究重点放在跨被试泛化和少量校准，避免把贡献写成没有证据支持的“新网络”。
-4. 后续安装 MNE 或 PyTorch 后，可将数据生成器替换为真实数据加载器，保留评估流程。
+本轮已新增真实数据脚本，运行说明见 REAL_DATA_GUIDE.md。最初的研究方案和待办见 PROJECT_HANDOFF.md；最新实际进度以真实实验的完成记录为准。

@@ -3,3 +3,7 @@ scipy>=1.18
 scikit-learn>=1.9
 pandas>=3.0
 matplotlib>=3.11
+mne>=1.13
+moabb>=1.7
+joblib>=1.6
+torch>=2.11

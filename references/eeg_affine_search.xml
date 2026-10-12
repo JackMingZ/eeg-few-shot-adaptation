@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/EZdJhHiEjGdzhejCgGqtN3W/E48</id>
+  <title>arXiv Query: search_query=all:EEG AND (all:"affine" OR all:"parameter-efficient")&amp;id_list=&amp;start=0&amp;max_results=6</title>
+  <updated>2026-10-08T10:46:10Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:EEG+AND+(all:%22affine%22+OR+all:%22parameter-efficient%22)&amp;start=0&amp;max_results=6&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>6</opensearch:itemsPerPage>
+  <opensearch:totalResults>36</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2608.24727v1</id>
+    <title>Parameter-Efficient Self-Supervised Adaptation for EEG-FM under Fixed Computational Budgets</title>
+    <updated>2026-08-25T15:38:46Z</updated>
+    <link href="https://arxiv.org/abs/2608.24727v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.24727v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>EEG foundation models pretrained via self-supervised learning promise transferable representations, but their generalization remains limited, especially across diverse clinical datasets. Full fine-tuning is impractical for resource-constrained clinical settings due to high computational requirements. In this work, we investigate whether parameter-efficient self-supervised adaptation, updating only 9% of parameters suffices to align representations to target tasks. We evaluate our method on two state-of-the-art models with different pretraining objectives: BIOT (contrastive) and CBraMod (masked reconstruction), and evaluate on three clinical EEG datasets for abnormality detection (TUAB), event classification (TUEV), and seizure detection (CHB-MIT) under both in-distribution and out-of-distribution conditions. SSL adaptation yields consistent gains over linear probing, up to 20x AUCPR. Under a fixed compute budget, peak performance requires only 20--50% of available unlabeled data. Critically, when total window count is fixed, performance remains invariant to patient count, suggesting that performance is dependent on overall temporal window diversity only. Our findings demonstrate that parameter-efficient adaptation enables effective deployment of EEG Foundation models (EEG-FM) with minimal computational overhead and data collection burden. Code available at: https://github.com/c3n-group/efficient-eeg-adapt</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-25T15:38:46Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Meghal Dani</name>
+    </author>
+    <author>
+      <name>Stefanie Liebe</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.21969v1</id>
+    <title>Adaptive Split-MMD Training for Small-Sample Cross-Dataset P300 EEG Classification</title>
+    <updated>2025-10-24T18:48:21Z</updated>
+    <link href="https://arxiv.org/abs/2510.21969v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.21969v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Detecting single-trial P300 from EEG is difficult when only a few labeled trials are available. When attempting to boost a small target set with a large source dataset through transfer learning, cross-dataset shift arises. To address this challenge, we study transfer between two public visual-oddball ERP datasets using five shared electrodes (Fz, Pz, P3, P4, Oz) under a strict small-sample regime (target: 10 trials/subject; source: 80 trials/subject). We introduce Adaptive Split Maximum Mean Discrepancy Training (AS-MMD), which combines (i) a target-weighted loss with warm-up tied to the square root of the source/target size ratio, (ii) Split Batch Normalization (Split-BN) with shared affine parameters and per-domain running statistics, and (iii) a parameter-free logit-level Radial Basis Function kernel Maximum Mean Discrepancy (RBF-MMD) term using the median-bandwidth heuristic. Implemented on an EEG Conformer, AS-MMD is backbone-agnostic and leaves the inference-time model unchanged. Across both transfer directions, it outperforms target-only and pooled training (Active Visual Oddball: accuracy/AUC 0.66/0.74; ERP CORE P3: 0.61/0.65), with gains over pooling significant under corrected paired t-tests. Ablations attribute improvements to all three components.</summary>
+    <category term="eess.SP" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.NE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-24T18:48:21Z</published>
+    <arxiv:comment>8 pages, 5 figures. Submitted to IEEE BIBM 2025 Workshop on Machine Learning for EEG Signal Processing (MLESP)</arxiv:comment>
+    <arxiv:primary_category term="eess.SP"/>
+    <author>
+      <name>Weiyu Chen</name>
+    </author>
+    <author>
+      <name>Arnaud Delorme</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2411.16155v2</id>
+    <title>Graph Adapter of EEG Foundation Models for Parameter Efficient Fine Tuning</title>
+    <updated>2025-02-18T08:00:21Z</updated>
+    <link href="https://arxiv.org/abs/2411.16155v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2411.16155v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In diagnosing neurological disorders from electroencephalography (EEG) data, foundation models such as Transformers have been employed to capture temporal dynamics. Additionally, Graph Neural Networks (GNNs) are critical for representing the spatial relationships among EEG sensors. However, fine-tuning these large-scale models for both temporal and spatial features can be prohibitively large in computational cost, especially under the limited availability of labeled EEG datasets. We propose EEG-GraphAdapter (EGA), a parameter-efficient fine-tuning (PEFT) approach designed to address these challenges. EGA is integrated into a pre-trained temporal backbone model as a GNN-based module, freezing the backbone and allowing only the adapter to be fine-tuned. This enables the effective acquisition of EEG spatial representations, significantly reducing computational overhead and data requirements. Experimental evaluations on two healthcare-related downstream tasks-Major Depressive Disorder (MDD) and Abnormality Detection (TUAB)-show that EGA improves performance by up to 16.1% in F1-score compared with the backbone BENDR model, highlighting its potential for scalable and accurate EEG-based predictions.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.SP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-11-25T07:30:52Z</published>
+    <arxiv:comment>Accepted AAAI W3PHIAI-25 Workshop</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Toyotaro Suzumura</name>
+    </author>
+    <author>
+      <name>Hiroki Kanezashi</name>
+    </author>
+    <author>
+      <name>Shotaro Akahori</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.18298v1</id>
+    <title>DARE-EEG: A Foundation Model for Mining Dual-Aligned Representation of EEG</title>
+    <updated>2026-05-18T12:18:43Z</updated>
+    <link href="https://arxiv.org/abs/2605.18298v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.18298v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Foundation models pre-trained through masked reconstruction on large-scale EEG data have emerged as a promising paradigm for learning generalizable neural representations across diverse brain-computer interface applications. However, a critical yet overlooked challenge is that EEG encoders must learn representations invariant to incomplete observations-when different masked views of the same signal have minimal overlap, existing methods fail to constrain them to a consistent latent subspace, leading to degraded transferability. To address this, we propose DARE-EEG, a self-supervised foundation model that explicitly enforces the mask-invariance property through dual-aligned representation learning during pre-training. Specifically, we introduce mask alignment that constrains representations from multiple masked views of the same EEG sample via contrastive learning, complementing anchor alignment that aligns masked representations to momentum-updated complete features for semantic stability. Additionally, we propose conv-linear-probing, a parameter-efficient strategy that adapts pre-trained representations to heterogeneous electrode configurations and sampling rates through decoupled spectro-spatial projections. Extensive experiments across diverse EEG benchmarks demonstrate that DARE-EEG consistently achieves state-of-the-art in accuracy performance while maintaining relatively low parameter complexity and superior cross-dataset portability compared to existing methods. Furthermore, DARE-EEG contributes to effectively discovering and utilizing the rich potential representations in EEG.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-18T12:18:43Z</published>
+    <arxiv:comment>22 pages, 10 pages of main text + 12 pages of appendices</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yang Shao</name>
+    </author>
+    <author>
+      <name>Peiliang Gong</name>
+    </author>
+    <author>
+      <name>Qun Dai</name>
+    </author>
+    <author>
+      <name>Daoqiang Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.28563v1</id>
+    <title>A Multi-dimensional Framework for Evaluating Generalization in EEG Foundation Models</title>
+    <updated>2026-05-27T14:51:54Z</updated>
+    <link href="https://arxiv.org/abs/2605.28563v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.28563v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Evaluating foundation models under appropriate adaptation settings is essential for understanding the quality and transferability of the learned representations. Recent EEG foundation models have demonstrated promising transfer capabilities across tasks and datasets, motivating their growing use in neurotechnology and clinical applications. However, these models are typically evaluated under full fine-tuning on well-curated downstream datasets, a setting that does not reflect biomedical domain constraints such as limited labeled data, reduced sensor coverage, or parameter-efficient adaptation. In this work, we propose a multi-dimensional evaluation framework for assessing EEG models under realistic low-resource conditions. Empirical analysis of both supervised EEG models and recent EEG foundation models, including LaBraM, CSBrain, and CBraMod, across 6 different datasets is performed under the proposed multi-dimensional evaluation framework. We find that EEG foundation models consistently provide performance gains on long-context tasks such as sleep stage prediction and mental health state classification. In contrast, for short-window Brain Computer Interface style tasks, supervised models achieve comparable despite having substantially fewer parameters. Additional analyses demonstrate that current foundation models provide limited robustness to short-window tasks and channel constrained settings. Together, these findings motivate the use of multi-dimensional evaluation protocols that characterize model behavior under realistic use constraints.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-27T14:51:54Z</published>
+    <arxiv:comment>24 pages, 5 Figures</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Aditya Kommineni</name>
+    </author>
+    <author>
+      <name>Emily Zhou</name>
+    </author>
+    <author>
+      <name>Kleanthis Avramidis</name>
+    </author>
+    <author>
+      <name>Tiantian Feng</name>
+    </author>
+    <author>
+      <name>Shrikanth Narayanan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.19166v2</id>
+    <title>Step-Aware Residual-Guided Diffusion for EEG Spatial Super-Resolution</title>
+    <updated>2026-02-22T13:56:52Z</updated>
+    <link href="https://arxiv.org/abs/2510.19166v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.19166v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>For real-world BCI applications, lightweight Electroencephalography (EEG) systems offer the best cost-deployment balance. However, such spatial sparsity of EEG limits spatial fidelity, hurting learning and introducing bias. EEG spatial super-resolution methods aim to recover high-density EEG signals from sparse measurements, yet is often hindered by distribution shift and signal distortion and thus reducing fidelity and usability for EEG analysis and visualization. To overcome these challenges, we introduce SRGDiff, a step-aware residual-guided diffusion model that formulates EEG spatial super-resolution as dynamic conditional generation. Our key idea is to learn a dynamic residual condition from the low-density input that predicts the step-wise temporal and spatial details to add and uses the evolving cue to steer the denoising process toward high density reconstructions. At each denoising step, the proposed residual condition is additively fused with the previous denoiser feature maps, then a step-dependent affine modulation scales and shifts the activation to produce the current features. This iterative procedure dynamically extracts step-wise temporal rhythms and spatial-topographic cues to steer high-density recovery and maintain a fidelity-consistency balance. We adopt a comprehensive evaluation protocol spanning signal-, feature-, and downstream-level metrics across SEED, SEED-IV, and Localize-MI and multiple upsampling scales. SRGDiff achieves consistent gains of up to 40% over strong baselines, proving its superiority in the task of EEG spatial super-resolution. Moreover, topographic visualizations comparison and substantial EEG-FID gains jointly indicate that our SR EEG mitigates the spatial-spectral shift between low- and high-density recordings. Our code is available at https://github.com/DhrLhj/ICLR2026SRGDiff.</summary>
+    <category term="cs.MM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-22T01:55:26Z</published>
+    <arxiv:comment>ICLR 2026 Conference Paper</arxiv:comment>
+    <arxiv:primary_category term="cs.MM"/>
+    <author>
+      <name>Hongjun Liu</name>
+    </author>
+    <author>
+      <name>Leyu Zhou</name>
+    </author>
+    <author>
+      <name>Zijianghao Yang</name>
+    </author>
+    <author>
+      <name>Chao Yao</name>
+    </author>
+  </entry>
+</feed>

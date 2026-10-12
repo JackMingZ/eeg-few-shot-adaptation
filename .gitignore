@@ -1,8 +1,14 @@
 __pycache__/
 *.pyc
-results/*.png
-results/*.csv
-results/*.json
 .venv/
+.pytest_cache/
+.mypy_cache/
+
+# Local data, checkpoints, logs and generated result matrices.
+data/
+results/
+*.log
+environment_verified.json
 
 *.whl
+*.pt

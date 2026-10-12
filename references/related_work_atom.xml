@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/iOokr3oKRF7XraOL/tKZHAa4WrI</id>
+  <title>arXiv Query: search_query=&amp;id_list=1709.07871,1603.04779,1611.08024&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-08T10:42:08Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=1709.07871,1603.04779,1611.08024" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>3</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1603.04779v4</id>
+    <title>Revisiting Batch Normalization For Practical Domain Adaptation</title>
+    <updated>2016-11-08T06:11:30Z</updated>
+    <link href="https://arxiv.org/abs/1603.04779v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1603.04779v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Deep neural networks (DNN) have shown unprecedented success in various computer vision applications such as image classification and object detection. However, it is still a common annoyance during the training phase, that one has to prepare at least thousands of labeled images to fine-tune a network to a specific domain. Recent study (Tommasi et al. 2015) shows that a DNN has strong dependency towards the training dataset, and the learned features cannot be easily transferred to a different but relevant task without fine-tuning. In this paper, we propose a simple yet powerful remedy, called Adaptive Batch Normalization (AdaBN) to increase the generalization ability of a DNN. By modulating the statistics in all Batch Normalization layers across the network, our approach achieves deep adaptation effect for domain adaptation tasks. In contrary to other deep learning domain adaptation methods, our method does not require additional components, and is parameter-free. It archives state-of-the-art performance despite its surprising simplicity. Furthermore, we demonstrate that our method is complementary with other existing methods. Combining AdaBN with existing domain adaptation treatments may further improve model performance.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2016-03-15T17:44:32Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Yanghao Li</name>
+    </author>
+    <author>
+      <name>Naiyan Wang</name>
+    </author>
+    <author>
+      <name>Jianping Shi</name>
+    </author>
+    <author>
+      <name>Jiaying Liu</name>
+    </author>
+    <author>
+      <name>Xiaodi Hou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1709.07871v2</id>
+    <title>FiLM: Visual Reasoning with a General Conditioning Layer</title>
+    <updated>2017-12-18T21:25:53Z</updated>
+    <link href="https://arxiv.org/abs/1709.07871v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1709.07871v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce a general-purpose conditioning method for neural networks called FiLM: Feature-wise Linear Modulation. FiLM layers influence neural network computation via a simple, feature-wise affine transformation based on conditioning information. We show that FiLM layers are highly effective for visual reasoning - answering image-related questions which require a multi-step, high-level process - a task which has proven difficult for standard deep learning methods that do not explicitly model reasoning. Specifically, we show on visual reasoning tasks that FiLM layers 1) halve state-of-the-art error for the CLEVR benchmark, 2) modulate features in a coherent manner, 3) are robust to ablations and architectural modifications, and 4) generalize well to challenging, new data from few examples or even zero-shot.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-09-22T17:54:12Z</published>
+    <arxiv:comment>AAAI 2018. Code available at http://github.com/ethanjperez/film . Extends arXiv:1707.03017</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Ethan Perez</name>
+    </author>
+    <author>
+      <name>Florian Strub</name>
+    </author>
+    <author>
+      <name>Harm de Vries</name>
+    </author>
+    <author>
+      <name>Vincent Dumoulin</name>
+    </author>
+    <author>
+      <name>Aaron Courville</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1611.08024v4</id>
+    <title>EEGNet: A Compact Convolutional Network for EEG-based Brain-Computer Interfaces</title>
+    <updated>2018-05-16T01:14:34Z</updated>
+    <link href="https://arxiv.org/abs/1611.08024v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1611.08024v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Brain computer interfaces (BCI) enable direct communication with a computer, using neural activity as the control signal. This neural signal is generally chosen from a variety of well-studied electroencephalogram (EEG) signals. For a given BCI paradigm, feature extractors and classifiers are tailored to the distinct characteristics of its expected EEG control signal, limiting its application to that specific signal. Convolutional Neural Networks (CNNs), which have been used in computer vision and speech recognition, have successfully been applied to EEG-based BCIs; however, they have mainly been applied to single BCI paradigms and thus it remains unclear how these architectures generalize to other paradigms. Here, we ask if we can design a single CNN architecture to accurately classify EEG signals from different BCI paradigms, while simultaneously being as compact as possible. In this work we introduce EEGNet, a compact convolutional network for EEG-based BCIs. We introduce the use of depthwise and separable convolutions to construct an EEG-specific model which encapsulates well-known EEG feature extraction concepts for BCI. We compare EEGNet to current state-of-the-art approaches across four BCI paradigms: P300 visual-evoked potentials, error-related negativity responses (ERN), movement-related cortical potentials (MRCP), and sensory motor rhythms (SMR). We show that EEGNet generalizes across paradigms better than the reference algorithms when only limited training data is available. We demonstrate three different approaches to visualize the contents of a trained EEGNet model to enable interpretation of the learned features. Our results suggest that EEGNet is robust enough to learn a wide variety of interpretable features over a range of BCI tasks, suggesting that the observed performances were not due to artifact or noise sources in the data.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-bio.NC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2016-11-23T22:36:58Z</published>
+    <arxiv:comment>30 pages, 10 figures. Added additional feature relevance analyses. Minor change to EEGNet architecture. Source code can be found at https://github.com/vlawhern/arl-eegmodels</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Vernon J. Lawhern</name>
+    </author>
+    <author>
+      <name>Amelia J. Solon</name>
+    </author>
+    <author>
+      <name>Nicholas R. Waytowich</name>
+    </author>
+    <author>
+      <name>Stephen M. Gordon</name>
+    </author>
+    <author>
+      <name>Chou P. Hung</name>
+    </author>
+    <author>
+      <name>Brent J. Lance</name>
+    </author>
+    <arxiv:doi>10.1088/1741-2552/aace8c</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1088/1741-2552/aace8c" title="doi"/>
+  </entry>
+</feed>

@@ -10,6 +10,6 @@
 | subject_normalized | 0.7782 | 0.7732 | 0.7043 |
 | few_shot_calibration | 0.9556 | 0.9548 | 0.9409 |
 
-当前结果说明：单独做被试级归一化会损失部分可分信息，但在加入每类少量校准样本后，模型超过全局基线。这个结果适合进一步研究“归一化与校准的组合”，不能直接外推到真实 EEG。
+当前结果说明：单独做逐试次逐通道时间标准化会损失部分可分信息，但在加入每类少量校准样本后，模型超过全局基线。这个结果适合进一步研究“归一化与校准的组合”，不能直接外推到真实 EEG。
 
-GPU 版本：`python run_gpu_experiment.py`。PyTorch 安装完成后将记录 CUDA/CPU 设备、参数量和 EEGNet 结果。
+GPU 版本：`python run_gpu_experiment.py`。已保存历史 GPU 演示结果，见 gpu_results.md；该校准设置为混合数据从头训练。
